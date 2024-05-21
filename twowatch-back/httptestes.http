@@ -1,0 +1,34 @@
+### busca todos
+GET http://localhost:8042/usuario
+
+
+### adiciona
+POST http://localhost:8042/usuario/criar
+Content-Type: application/json
+
+{
+  "nome": "ana"
+}
+
+###
+
+### atualiza um
+PUT http://localhost:8042/usuario/atualizar
+Content-Type: application/json
+
+{
+  "id": 1,
+  "nome": "joaozin3"
+}
+
+###
+
+### remove um
+DELETE http://localhost:8042/usuario
+Content-Type: application/json
+
+{
+  "id": 3
+}
+
+###
