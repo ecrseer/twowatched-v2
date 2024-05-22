@@ -19,10 +19,6 @@ public class UsuarioService {
         return usuars;
     }
 
-    public void cadastrar(Usuario usuario) {
-        usuario.setId(usuarios.size() + 1);
-        this.usuarios.add(usuario);
-    }
 
     public List<Usuario> mostrarTodos() {
         return this.usuarios;
@@ -36,7 +32,7 @@ public class UsuarioService {
                 return usuario;
             }
         }
-        throw new ResourceNotFoundException("não foi possivel atualizar, usuario não encontrado");
+        throw new ResourceNotFoundException("nao foi possivel atualizar, usuario nao encontrado");
     }
 
     public Usuario encontrarPorId(int id) {
@@ -56,5 +52,10 @@ public class UsuarioService {
             }
         }
         throw new ResourceNotFoundException("não foi possivel remover, usuario não encontrado");
+    }
+
+    public void cadastrar(Usuario usuario) {
+        usuario.setId(usuarios.size() + 1);
+        this.usuarios.add(usuario);
     }
 }

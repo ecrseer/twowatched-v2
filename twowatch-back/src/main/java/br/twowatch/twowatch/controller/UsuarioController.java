@@ -2,6 +2,7 @@ package br.twowatch.twowatch.controller;
 
 import br.twowatch.twowatch.model.Usuario;
 import br.twowatch.twowatch.service.UsuarioService;
+import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -29,6 +30,7 @@ public class UsuarioController {
     }
 
     @PostMapping("/criar")
+    @Operation(summary = "Cria um usuário")
     public int cadastraUsuario(@RequestBody Usuario usuario) {
         usuarioService.cadastrar(usuario);
         return usuario.getId();
