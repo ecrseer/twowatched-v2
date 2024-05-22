@@ -14,8 +14,8 @@ public class UsuarioService {
 
     private List<Usuario> initValues() {
         ArrayList<Usuario> usuars = new ArrayList<>();
-        usuars.add(new Usuario(1, "Ana", "abc@", "123"));
-        usuars.add(new Usuario(2, "Rafa", "def@", "123"));
+        usuars.add(new Usuario(1, "Ana", "abc@gmail.com", "123"));
+        usuars.add(new Usuario(2, "Rafa", "def@gmail.com", "123"));
         return usuars;
     }
 
