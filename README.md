@@ -30,10 +30,8 @@ O backend da Biblioteca de Filmes serve como o componente central de nossa aplic
 
 ```json
 {
-  "id": "string",
-  "username": "string",
+  "id": 0,
+  "nome": "string",
   "email": "string",
-  "password": "string (criptografado)",
-  "createdAt": "timestamp",
-  "updatedAt": "timestamp"
+  "senha": "string"
 }
