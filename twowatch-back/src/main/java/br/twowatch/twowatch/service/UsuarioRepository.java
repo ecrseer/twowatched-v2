@@ -1,7 +1,10 @@
 package br.twowatch.twowatch.service;
 
 import br.twowatch.twowatch.model.Usuario;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface UsuarioRepository extends CrudRepository<Usuario, Integer> {
+import java.util.Optional;
+
+public interface UsuarioRepository extends JpaRepository<Usuario, Integer> {
+    Optional<Usuario> findAllByNome(String nome);
 }

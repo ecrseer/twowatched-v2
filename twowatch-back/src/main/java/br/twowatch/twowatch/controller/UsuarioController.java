@@ -3,14 +3,13 @@ package br.twowatch.twowatch.controller;
 import br.twowatch.twowatch.exceptions.MessagePayload;
 import br.twowatch.twowatch.exceptions.ResourceNotFoundException;
 import br.twowatch.twowatch.model.Usuario;
-import br.twowatch.twowatch.service.UsuarioRepository;
-import br.twowatch.twowatch.service.UsuarioService;
+import br.twowatch.twowatch.service.UsuarioServiceImpl;
+import br.twowatch.twowatch.service.UsuarioServiceOld;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -21,14 +20,13 @@ import java.util.Map;
 @RestController
 @RequestMapping("/usuario")
 public class UsuarioController {
+    private final UsuarioServiceOld usuarioService;
+    private final UsuarioServiceImpl usuarioServiceImpl;
 
-
-    final UsuarioService usuarioService;
-
-    public UsuarioController(UsuarioService usuarioService) {
+    public UsuarioController(UsuarioServiceOld usuarioService, UsuarioServiceImpl usuarioServiceImpl) {
         this.usuarioService = usuarioService;
+        this.usuarioServiceImpl = usuarioServiceImpl;
     }
-
 
     @PutMapping("/atualizar")
     public ResponseEntity<Usuario> atualizaUsuario(@RequestBody Usuario usuario) {
@@ -71,7 +69,12 @@ public class UsuarioController {
 
     @GetMapping
     public List<Usuario> listaUsuarios() {
-        return this.usuarioService.mostrarTodos();
+        return this.usuarioServiceImpl.findAll();
+    }
+
+    @GetMapping("por-nome")
+    public Usuario encontraUsuarioPorNome(@RequestParam String nome) {
+        return this.usuarioServiceImpl.findByNome(nome);
     }
 
 }
