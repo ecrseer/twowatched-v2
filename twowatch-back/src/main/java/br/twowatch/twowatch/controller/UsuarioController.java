@@ -3,6 +3,7 @@ package br.twowatch.twowatch.controller;
 import br.twowatch.twowatch.exceptions.MessagePayload;
 import br.twowatch.twowatch.exceptions.ResourceNotFoundException;
 import br.twowatch.twowatch.model.Usuario;
+import br.twowatch.twowatch.service.UsuarioRepository;
 import br.twowatch.twowatch.service.UsuarioService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;

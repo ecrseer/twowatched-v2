@@ -12,6 +12,7 @@ import java.util.Optional;
 public class UsuarioService {
     private List<Usuario> usuarios = initValues();
 
+
     private List<Usuario> initValues() {
         ArrayList<Usuario> usuars = new ArrayList<>();
         usuars.add(new Usuario(1, "Ana", "abc@gmail.com", "123"));
