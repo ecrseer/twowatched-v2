@@ -11,4 +11,6 @@ public interface UsuarioService {
     Optional<Usuario> findById(int id);
 
     Usuario save(Usuario usuario);
+
+    
 }

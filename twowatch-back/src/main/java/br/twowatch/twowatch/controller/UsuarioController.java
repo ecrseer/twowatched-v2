@@ -1,6 +1,6 @@
 package br.twowatch.twowatch.controller;
 
-import br.twowatch.twowatch.exceptions.MessagePayload;
+import br.twowatch.twowatch.exceptions.HttpMessagePayload;
 import br.twowatch.twowatch.exceptions.ResourceNotFoundException;
 import br.twowatch.twowatch.model.Usuario;
 import br.twowatch.twowatch.service.UsuarioServiceImpl;
@@ -62,7 +62,7 @@ public class UsuarioController {
             Usuario usuario = this.usuarioService.encontrarPorId(id);
             return ResponseEntity.ok(usuario);
         } catch (ResourceNotFoundException ex) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new MessagePayload("Usuario nao encontrado com esse id"));
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new HttpMessagePayload("Usuario nao encontrado com esse id"));
 
         }
     }

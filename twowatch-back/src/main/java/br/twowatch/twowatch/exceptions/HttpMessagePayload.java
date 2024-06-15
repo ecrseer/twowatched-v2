@@ -1,9 +1,9 @@
 package br.twowatch.twowatch.exceptions;
 
-public class MessagePayload {
+public class HttpMessagePayload {
     private String message;
 
-    public MessagePayload(String message) {
+    public HttpMessagePayload(String message) {
         this.message = message;
     }
 

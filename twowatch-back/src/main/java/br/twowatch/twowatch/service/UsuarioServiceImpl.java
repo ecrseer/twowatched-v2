@@ -1,7 +1,8 @@
 package br.twowatch.twowatch.service;
 
 import br.twowatch.twowatch.model.Usuario;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -18,7 +19,14 @@ public class UsuarioServiceImpl implements UsuarioService {
 
     @Override
     public List<Usuario> findAll() {
+
         return this.usuarioRepository.findAll();
+    }
+
+    public List<Usuario> findAllPaginated(int pagina, int quantidade, boolean ascending) {
+        Sort ordem = ascending ? Sort.by("nome").ascending() : Sort.by("nome").descending();
+        PageRequest paginacao = PageRequest.of(pagina, quantidade, ordem);
+        return this.usuarioRepository.findAll(paginacao).stream().toList();
     }
 
     @Override
@@ -35,6 +43,24 @@ public class UsuarioServiceImpl implements UsuarioService {
     public Usuario save(Usuario usuario) {
         Usuario salvo = this.usuarioRepository.save(usuario);
         return salvo;
+    }
+
+
+    public Usuario findByEmail(String email) {
+        Optional<Usuario> usuario = this.usuarioRepository.findAllByEmail(email);
+        if (usuario.isPresent()) {
+            return usuario.get();
+        }
+        throw new RuntimeException("Nao encontrado");
+    }
+
+
+    public Usuario atualiza(int id, Usuario usuario) {
+        Optional<Usuario> encontrado = this.findById(id);
+        if (encontrado.isEmpty()) {
+            throw new RuntimeException("Nao encontrado");
+        }
+        return this.save(usuario);
     }
 
 }

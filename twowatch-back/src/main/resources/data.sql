@@ -1,2 +1,2 @@
-INSERT INTO Usuario (nome)
-VALUES ('Gabr');
+INSERT INTO Usuario (nome, email)
+VALUES ('Dabriel', 'gab_fake@gmail.com');
