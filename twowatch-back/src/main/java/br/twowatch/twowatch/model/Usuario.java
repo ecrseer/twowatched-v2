@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 
 @Entity
 @Data
@@ -17,6 +19,9 @@ public class Usuario {
     private String nome;
     private String email;
     private String senha;
+
+    @ManyToMany(fetch = FetchType.LAZY)
+    private List<SalaChat> salaChats;
 
     public Usuario(String nome, String email, String senha) {
         this.nome = nome;

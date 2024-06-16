@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Entity
 @Data
 @AllArgsConstructor
@@ -15,9 +17,12 @@ public class SalaChat {
     private Long id;
     private String nome;
 
-    @ManyToOne(cascade = CascadeType.PERSIST)
+    @ManyToOne()
     @JoinColumn(name = "filme_id")
     private Filme filme;
+
+    @ManyToMany(fetch = FetchType.EAGER)
+    private List<Usuario> usuarios;
 
     public SalaChat(String nome) {
         this.nome = nome;

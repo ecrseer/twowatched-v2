@@ -31,4 +31,20 @@ Content-Type: application/json
   "id": 3
 }
 
+###### cria sala
+POST http://localhost:8042/sala-chat/criar
+Content-Type: application/json
+
+{
+  "nome": "sala httpss",
+  "filme": {
+    "id": 2
+  },
+  "usuarios": [
+    {
+      "id": 1
+    }
+  ]
+}
+
 ###
