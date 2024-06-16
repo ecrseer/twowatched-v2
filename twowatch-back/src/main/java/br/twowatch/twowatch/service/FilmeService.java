@@ -5,7 +5,7 @@ import br.twowatch.twowatch.model.Filme;
 import java.util.List;
 
 public interface FilmeService {
-    Filme save();
+    Filme save(Filme filme);
 
-    List<Filme> findAll();
+    List<Filme> findAllPaged(int page, int pageSize, boolean ascending);
 }

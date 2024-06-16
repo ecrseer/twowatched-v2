@@ -22,7 +22,6 @@ public class UsuarioServiceOldTests {
     public void testaAtualizarUsuario() {
         Usuario atualizado = this.usuarioService.atualiza(1, new Usuario("n", "mmc", ""));
         assertNotNull(atualizado);
-
     }
 
     @Test
@@ -31,6 +30,7 @@ public class UsuarioServiceOldTests {
         String MOCK_EMAIL = "email@falso.com";
         Usuario salvo = this.usuarioService.save(new Usuario("n", MOCK_EMAIL, ""));
         assertNotNull(salvo);
+
         Usuario encontrado = this.usuarioService.findByEmail(MOCK_EMAIL);
         assertEquals("n", encontrado.getNome());
 
@@ -41,6 +41,7 @@ public class UsuarioServiceOldTests {
     public void testaInserirUsuario() {
         List<Usuario> usuarios = this.usuarioService.findAll();
         assertNotNull(usuarios);
+
         this.usuarioService.save(new Usuario("Gabriel", "gab@gmail.com", "123"));
         List<Usuario> usuariosEinserido = this.usuarioService.findAll();
         assertTrue(usuariosEinserido.size() > usuarios.size());

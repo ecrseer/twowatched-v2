@@ -20,15 +20,27 @@ public class Filme {
     private String imdb_id;
     private String original_language;
     private String overview;
-    private float popularity;
+    private Float popularity;
     private String poster_path;
     private String release_date;
-    private float revenue;
-    private float runtime;
+    private Float revenue;
+    private Float runtime;
     private String status;
     private String tagline;
 
     public Filme() {
+    }
+
+    public Filme(long id, String title, String overview) {
+        this.id = id;
+        this.title = title;
+        this.overview = overview;
+    }
+
+    public Filme(String title, String overview) {
+        this.id = id;
+        this.title = title;
+        this.overview = overview;
     }
 
     public Filme(String original_title, String title, String tmdb_id, String backdrop_path, String imdb_id, String original_language, String overview, float popularity, String poster_path, String release_date, float revenue, float runtime, String status, String tagline) {
@@ -104,11 +116,11 @@ public class Filme {
         this.overview = overview;
     }
 
-    public float getPopularity() {
+    public Float getPopularity() {
         return popularity;
     }
 
-    public void setPopularity(float popularity) {
+    public void setPopularity(Float popularity) {
         this.popularity = popularity;
     }
 
@@ -128,19 +140,19 @@ public class Filme {
         this.release_date = release_date;
     }
 
-    public float getRevenue() {
+    public Float getRevenue() {
         return revenue;
     }
 
-    public void setRevenue(float revenue) {
+    public void setRevenue(Float revenue) {
         this.revenue = revenue;
     }
 
-    public float getRuntime() {
+    public Float getRuntime() {
         return runtime;
     }
 
-    public void setRuntime(float runtime) {
+    public void setRuntime(Float runtime) {
         this.runtime = runtime;
     }
 
