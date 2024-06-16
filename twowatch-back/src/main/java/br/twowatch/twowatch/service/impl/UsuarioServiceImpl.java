@@ -1,6 +1,8 @@
-package br.twowatch.twowatch.service;
+package br.twowatch.twowatch.service.impl;
 
 import br.twowatch.twowatch.model.Usuario;
+import br.twowatch.twowatch.service.UsuarioRepository;
+import br.twowatch.twowatch.service.UsuarioService;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;

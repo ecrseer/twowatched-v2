@@ -1,6 +1,8 @@
-package br.twowatch.twowatch.service;
+package br.twowatch.twowatch.service.impl;
 
 import br.twowatch.twowatch.model.Filme;
+import br.twowatch.twowatch.service.FilmeRepository;
+import br.twowatch.twowatch.service.FilmeService;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;

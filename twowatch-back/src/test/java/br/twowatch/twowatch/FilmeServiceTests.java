@@ -1,7 +1,7 @@
 package br.twowatch.twowatch;
 
 import br.twowatch.twowatch.model.Filme;
-import br.twowatch.twowatch.service.FilmeServiceImpl;
+import br.twowatch.twowatch.service.impl.FilmeServiceImpl;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -2,7 +2,7 @@ package br.twowatch.twowatch;
 
 
 import br.twowatch.twowatch.model.Usuario;
-import br.twowatch.twowatch.service.UsuarioServiceImpl;
+import br.twowatch.twowatch.service.impl.UsuarioServiceImpl;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,4 +1,4 @@
-package br.twowatch.twowatch.service;
+package br.twowatch.twowatch.service.impl;
 
 import br.twowatch.twowatch.exceptions.ResourceNotFoundException;
 import br.twowatch.twowatch.model.Usuario;
