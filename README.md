@@ -6,32 +6,62 @@ Documentação para o backend da nossa aplicação de Biblioteca de Filmes. Este
 
 O backend da Biblioteca de Filmes serve como o componente central de nossa aplicação, gerenciando a autenticação do usuário, armazenamento de filmes, funcionalidade de chat e salas privadas. Abaixo estão as principais entidades e funcionalidades fornecidas pelo backend:
 
-- **Usuário**: Representa um usuário registrado da aplicação.
+- **Usuário**: Representa um usuário registrado da aplicação. 
 - **Sala de Chat**: Um espaço virtual onde os usuários podem discutir sobre filmes.
-- **Mensagens de Chat**: Mensagens trocadas dentro de uma sala de chat.
 - **Filmes**: Informações sobre os filmes adicionados à biblioteca.
-- **Sala Privada**: Salas de chat privadas entre usuários específicos.
+
+<br/>
+
+- **Mensagens de Chat**: Mensagens trocadas dentro de uma sala de chat. [Sendo implementado]
+- **Sala Privada**: Salas de chat privadas entre usuários específicos. [Futuro]
 
 ## Endpoints da API
-
-
-
-### Gerenciamento de Usuários
-
-- `GET /api/usuario`: Obter uma lista de todos os usuários.
-- `POST /api/usuario/:id`: Criar usuário.
-- `PUT /api/usuario/:id`: Atualizar detalhes do usuário.
-
+![img.png](docs/img.png) 
  
- 
-## Modelos de Dados
+## Domínio
+
+### Filme
+
+```ts
+{
+    id: number;
+    tmdb_id: string;
+    original_title: string;
+    title: string;
+    backdrop_path: string;
+    imdb_id: string;
+    original_language: string;
+    overview: string;
+    popularity: number;
+    poster_path: string;
+    release_date: string;
+    revenue: number;
+    runtime: number;
+    status: string;
+    tagline: Filme;
+}
+```
+
+### SalaChat
+
+```ts
+ {
+  id: number;
+  nome: string;
+  filme: Filme;
+  usuarios: Usuario[];
+  }
+
+```
 
 ### Usuário
 
-```json
-{
-  "id": 0,
-  "nome": "string",
-  "email": "string",
-  "senha": "string"
-}
+```ts
+ {
+  id: number;
+  nome: string;
+  email: string;
+  senha: string;
+  salaChats: SalaChat[];
+  }
+```
