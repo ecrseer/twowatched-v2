@@ -65,3 +65,11 @@ O backend da Biblioteca de Filmes serve como o componente central de nossa aplic
   salaChats: SalaChat[];
   }
 ```
+
+
+### Exemplos de uso
+
+###### Os exemplos de uso podem ser encontrados nos próprios testes, eis abaixo um exemplo
+![testes-uso.png](docs/testes-uso.png)
+###### onde é possivel ver como utilizar o service de usuarios para atualizar um usuário existente
+###### ou encontrar um usuario por email
